@@ -1,9 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { WorkoutsEntity } from '../workouts/workout.entity';
 import {
   Column,
   Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
   Unique,
@@ -35,4 +38,12 @@ export class UserEntity {
   )
   @JoinColumn()
   workouts: WorkoutsEntity[];
+
+
+  @ManyToMany(
+    (type) => WorkoutsEntity,
+    (workoutsEntity) => workoutsEntity.user,
+  )
+  @JoinTable({ name: 'favoriteWorkouts' })
+  favoriteWorkouts: WorkoutsEntity[];
 }

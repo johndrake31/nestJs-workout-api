@@ -32,10 +32,10 @@ export class ExerciseEntity {
   @Column({ type: 'varchar', length: 500, nullable: true })
   notes: string;
 
-  @Column({ type: 'varchar', length: 500, nullable: true })
+  @Column({ type: 'varchar', length: 250, nullable: true })
   uri: string;
 
-  @Column({ type: 'varchar', length: 500, nullable: true })
+  @Column({ type: 'varchar', length: 250, nullable: true })
   imgUrl: string;
 
   @ManyToOne(

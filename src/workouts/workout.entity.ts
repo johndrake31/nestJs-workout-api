@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { UserEntity } from '../user/user.entity';
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn, ManyToMany } from 'typeorm';
 import { ExerciseEntity } from 'src/exercises/exercise.entity';
 
 @Injectable()
@@ -44,4 +44,7 @@ export class WorkoutsEntity {
     onDelete: 'CASCADE',
   })
   user: UserEntity;
+
+  @ManyToMany((type) => UserEntity, (userEntity) => userEntity.favoriteWorkouts)
+  users: UserEntity[];
 }

@@ -8,6 +8,7 @@ import { WorkoutsModule } from './workouts/workouts.module';
 import { ExercisesController } from './exercises/exercises.controller';
 import { ExercisesService } from './exercises/exercises.service';
 import { ExercisesModule } from './exercises/exercises.module';
+import { FavoriteWorkoutsModule } from './favorite-workouts/favorite-workouts.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -25,6 +26,7 @@ import { ExercisesModule } from './exercises/exercises.module';
     UserModule,
     WorkoutsModule,
     ExercisesModule,
+    FavoriteWorkoutsModule,
   ],
   controllers: [AppController, ExercisesController],
   providers: [AppService, ExercisesService],
