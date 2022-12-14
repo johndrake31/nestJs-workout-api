@@ -28,7 +28,7 @@ import { FavoriteWorkoutsModule } from './favorite-workouts/favorite-workouts.mo
     ExercisesModule,
     FavoriteWorkoutsModule,
   ],
-  controllers: [AppController, ExercisesController],
-  providers: [AppService, ExercisesService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
