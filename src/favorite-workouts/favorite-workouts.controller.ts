@@ -1,20 +1,20 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get, Param } from '@nestjs/common';
-import { IWorkout } from 'src/workouts/workouts.interface';
+import { IUser } from '../user/user.interface';
 
 import { FavoriteWorkoutsService } from './favorite-workouts.service';
 
-@Controller('favoriteworkouts')
+@Controller('favworkouts')
 export class FavoriteWorkoutsController {
     constructor( private readonly favsServ: FavoriteWorkoutsService ){}
     @Get()
     getHello(): string {
         return 'Hello World!';
       }
-      
+
     @Get(':id')
-    async findOne(@Param('id') id): Promise<IWorkout[]>{
-        const results = await this.favsServ.findAllByUserId(+id);
-        return [...results];
+    async findAllUserFavs(@Param('id') id): Promise<IUser>{
+        const results = await this.favsServ.getAll(+id);
+        return results
     }
 }
