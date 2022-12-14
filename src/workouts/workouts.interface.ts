@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { IExercise } from "../exercises/exercises.interface";
 export interface IWorkout {
-    id: string;
+    id: number;
     mainTitle: string;
     discriptionShort?: string;
     discriptionExtra?: string;

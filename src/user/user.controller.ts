@@ -18,6 +18,7 @@ export class UserController {
     async findAllUsers(): Promise<IUser[]>{
         return await this.userServ.findAll();
     }
+    
     @Get(':id')
     async findOne(@Param('id') id): Promise<IUser>{
         return await this.userServ.findOneById(+id);

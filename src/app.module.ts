@@ -19,7 +19,7 @@ import { FavoriteWorkoutsModule } from './favorite-workouts/favorite-workouts.mo
       password: 'nest-nest',
       database: 'nest-test',
       entities: [__dirname + '/**/*.entity{.ts,.js}', UserEntity],
-      synchronize: true,
+      synchronize: false,
       autoLoadEntities: true,
       socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
     }),
